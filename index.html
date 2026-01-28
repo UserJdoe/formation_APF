@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formation APF France handicap - Piloter un projet métier simplement et efficacement - 14 février 2025">
+    <title>Piloter un projet métier | APF France handicap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bleu-petrole: #00536A;
+            --jaune-orange: #F7A916;
+            --blanc: #FFFFFF;
+            --gris-clair: #F5F5F5;
+            --gris-texte: #333333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--gris-texte);
+            background-color: var(--blanc);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bleu-petrole) 0%, #006b85 100%);
+            color: var(--blanc);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .info-badge {
+            display: inline-block;
+            background-color: var(--jaune-orange);
+            color: var(--bleu-petrole);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Banner Image */
+        .banner {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(rgba(0, 83, 106, 0.7), rgba(0, 83, 106, 0.7)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%2300536A;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23F7A916;stop-opacity:0.2" /></linearGradient></defs><rect fill="url(%23grad)" width="1200" height="400"/><circle cx="200" cy="100" r="80" fill="%23F7A916" opacity="0.3"/><circle cx="900" cy="250" r="120" fill="%2300536A" opacity="0.2"/><path d="M 0 200 Q 300 150 600 200 T 1200 200 L 1200 400 L 0 400 Z" fill="%2300536A" opacity="0.15"/><rect x="100" y="150" width="150" height="10" rx="5" fill="%23F7A916" opacity="0.4"/><rect x="400" y="200" width="200" height="10" rx="5" fill="%23F7A916" opacity="0.3"/><rect x="800" y="120" width="180" height="10" rx="5" fill="%23F7A916" opacity="0.4"/><circle cx="500" cy="80" r="5" fill="%23FFFFFF" opacity="0.6"/><circle cx="750" cy="180" r="5" fill="%23FFFFFF" opacity="0.6"/><circle cx="300" cy="280" r="5" fill="%23FFFFFF" opacity="0.6"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanc);
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            color: var(--bleu-petrole);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--jaune-orange);
+            padding-left: 1rem;
+        }
+
+        /* Programme - Accordéon */
+        .accordion {
+            margin-top: 2rem;
+        }
+
+        .accordion-item {
+            background-color: var(--blanc);
+            border: 2px solid var(--bleu-petrole);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 83, 106, 0.15);
+        }
+
+        .accordion-header {
+            background-color: var(--bleu-petrole);
+            color: var(--blanc);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #006b85;
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: var(--gris-clair);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .accordion-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .accordion-body li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .accordion-body li:before {
+            content: "▸";
+            color: var(--jaune-orange);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Compétences */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .competence-card {
+            background-color: var(--gris-clair);
+            border-left: 4px solid var(--jaune-orange);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .competence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 83, 106, 0.15);
+        }
+
+        .competence-card h3 {
+            color: var(--bleu-petrole);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .competence-card ul {
+            list-style: none;
+        }
+
+        .competence-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .competence-card li:before {
+            content: "✓";
+            color: var(--jaune-orange);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Boutons */
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--jaune-orange);
+            color: var(--bleu-petrole);
+            box-shadow: 0 4px 10px rgba(247, 169, 22, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #e09a0d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(247, 169, 22, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--bleu-petrole);
+            border: 2px solid var(--bleu-petrole);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bleu-petrole);
+            color: var(--blanc);
+            transform: translateY(-2px);
+        }
+
+        /* Carte */
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .address-info {
+            background-color: var(--gris-clair);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .address-icon {
+            font-size: 2rem;
+            color: var(--jaune-orange);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bleu-petrole);
+            color: var(--blanc);
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--jaune-orange);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--blanc);
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--jaune-orange);
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Dauphin */
+        .dolphin-container {
+            text-align: center;
+            padding: 2rem 0 1rem;
+        }
+
+        .dolphin {
+            width: 80px;
+            height: auto;
+            animation: jump 2s ease-in-out infinite;
+        }
+
+        @keyframes jump {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(-10deg); }
+            50% { transform: translateY(-30px) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .banner {
+                height: 250px;
+                font-size: 1.5rem;
+            }
+
+            .competences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibilité */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        :focus {
+            outline: 3px solid var(--jaune-orange);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Logo APF France handicap" class="logo">
+            <h1>Piloter un projet métier simplement et efficacement</h1>
+            <p class="subtitle">Clarifier le besoin, prioriser les actions, avancer sans expertise IT</p>
+            <div>
+                <span class="info-badge">📅 14 février 2025 - 10h</span>
+                <span class="info-badge">⏱️ 1 jour - 7 heures</span>
+                <span class="info-badge">👥 Chefs de projet métier</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <span>Formation 100% accessible et inclusive</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- À propos -->
+        <section id="about">
+            <h2>À propos de la formation</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+                Cette formation s'adresse aux <strong>chefs de projet métier d'APF France handicap</strong> qui portent des projets nécessaires 
+                mais parfois complexes (outils, process, reporting). Vous apprendrez à <strong>structurer vos projets sans jargon</strong>, 
+                à clarifier rapidement vos besoins et à faciliter le dialogue avec les équipes IT et les parties prenantes.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 1rem;">
+                <strong>Public cible :</strong> Responsables RH, Finance, Patrimoine, Ressources — Professionnels non spécialistes IT — 
+                Collaborateurs sensibles aux enjeux humains et inclusifs.
+            </p>
+        </section>
+
+        <!-- Programme -->
+        <section id="programme">
+            <h2>Programme de la journée</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                        <span>1️⃣ Comprendre le mode projet (matin)</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Ce qu'est (et n'est pas) un projet</li>
+                                <li>Les grandes étapes d'un projet métier</li>
+                                <li>Les rôles clés et responsabilités</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-style: italic; color: var(--bleu-petrole);">
+                                💡 Approche sans jargon, illustrée par des cas APF
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                        <span>2️⃣ Clarifier le besoin et les objectifs (fin de matinée)</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Différence besoin / solution</li>
+                                <li>Formulation d'objectifs projet clairs et atteignables</li>
+                                <li>Identification des enjeux et priorités métier</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-style: italic; color: var(--bleu-petrole);">
+                                💡 Études de cas et grilles de clarification
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                        <span>3️⃣ Construire un plan d'actions efficace (début d'après-midi)</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Découpage du projet en actions concrètes</li>
+                                <li>Priorisation simple (urgent / important)</li>
+                                <li>Notion de charge et de délais réalistes</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-style: italic; color: var(--bleu-petrole);">
+                                💡 Atelier guidé pas-à-pas avec canevas
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" tabindex="0" role="button" aria-expanded="false">
+                        <span>4️⃣ Partager son projet et coopérer (fin d'après-midi)</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Présenter un projet en quelques minutes</li>
+                                <li>Adapter son discours aux interlocuteurs</li>
+                                <li>Anticiper les questions et contraintes IT</li>
+                            </ul>
+                            <p style="margin-top: 1rem; font-style: italic; color: var(--bleu-petrole);">
+                                💡 Jeux de rôle simplifiés et feedback bienveillant
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compétences -->
+        <section id="competences">
+            <h2>Compétences développées</h2>
+            <div class="competences-grid">
+                <div class="competence-card">
+                    <h3>🧠 Compétences cognitives</h3>
+                    <ul>
+                        <li>Comprendre les fondamentaux du mode projet</li>
+                        <li>Distinguer activité courante et projet</li>
+                        <li>Identifier les rôles et étapes clés</li>
+                    </ul>
+                </div>
+                <div class="competence-card">
+                    <h3>⚙️ Compétences opérationnelles</h3>
+                    <ul>
+                        <li>Clarifier un besoin métier</li>
+                        <li>Définir des critères de réussite simples</li>
+                        <li>Construire un plan d'actions réaliste</li>
+                        <li>Découper un projet en actions concrètes</li>
+                    </ul>
+                </div>
+                <div class="competence-card">
+                    <h3>🤝 Compétences relationnelles</h3>
+                    <ul>
+                        <li>Présenter un projet clairement</li>
+                        <li>Faciliter le dialogue avec l'IT</li>
+                        <li>Argumenter à partir du besoin métier</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Téléchargements -->
+        <section id="downloads">
+            <h2>Documents à télécharger</h2>
+            <div class="btn-container">
+                <a href="Programme.pdf" class="btn btn-primary" download>📄 Télécharger le programme complet</a>
+                <a href="livret-stagiaire.pdf" class="btn btn-secondary" download>📚 Télécharger le livret stagiaire</a>
+            </div>
+        </section>
+
+        <!-- Lieu -->
+        <section id="lieu">
+            <h2>Lieu de formation</h2>
+            <div class="address-info">
+                <span class="address-icon">📍</span>
+                <div>
+                    <strong style="font-size: 1.1rem; color: var(--bleu-petrole);">APF France handicap - Siège national</strong><br>
+                    17 boulevard Auguste Blanqui, 75013 Paris
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.3076847558377!2d2.3449654!3d48.8303456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6719f4e6b1d5f%3A0x4b2e8a0a9c5d1e3f!2s17%20Boulevard%20Auguste%20Blanqui%2C%2075013%20Paris!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Carte de localisation - 17 boulevard Auguste Blanqui, Paris">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact formatrice</h3>
+                <p><strong>Anne</strong></p>
+                <p>📧 <a href="mailto:anne@atest.com">anne@atest.com</a></p>
+                <p>📞 <a href="tel:+33606060606">06 06 06 06 06</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>APF France handicap</h3>
+                <p>Association reconnue d'utilité publique</p>
+                <p>Engagée pour l'inclusion et l'autonomie</p>
+                <p><a href="https://www.apf-francehandicap.org/histoire-handicap-association" target="_blank" rel="noopener noreferrer">
+                    🔗 Politique d'inclusion et de gestion du handicap
+                </a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Valeur ajoutée</h3>
+                <p>✓ Formation 100% accessible et inclusive</p>
+                <p>✓ Méthodes adaptées aux non-spécialistes IT</p>
+                <p>✓ Outils simples et réutilisables</p>
+                <p>✓ Conformité Qualiopi</p>
+            </div>
+        </div>
+        
+        <div class="dolphin-container">
+            <svg class="dolphin" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="dolphinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#F7A916;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00536A;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Corps du dauphin -->
+                <ellipse cx="100" cy="80" rx="60" ry="25" fill="url(#dolphinGradient)"/>
+                <!-- Tête -->
+                <ellipse cx="145" cy="75" rx="25" ry="20" fill="url(#dolphinGradient)"/>
+                <!-- Bec -->
+                <ellipse cx="165" cy="73" rx="12" ry="8" fill="#00536A"/>
+                <!-- Œil -->
+                <circle cx="155" cy="68" r="3" fill="white"/>
+                <!-- Nageoire dorsale -->
+                <path d="M 100 60 Q 105 40 110 60" fill="#00536A"/>
+                <!-- Queue -->
+                <path d="M 50 80 Q 30 70 25 85 Q 30 90 50 80" fill="#00536A"/>
+                <path d="M 50 80 Q 30 85 28 95 Q 35 98 50 80" fill="#00536A"/>
+                <!-- Nageoire ventrale -->
+                <ellipse cx="120" cy="95" rx="15" ry="8" fill="#00536A" opacity="0.8"/>
+                <!-- Vagues d'eau -->
+                <path d="M 20 120 Q 40 115 60 120 T 100 120 T 140 120 T 180 120" 
+                      stroke="#F7A916" stroke-width="2" fill="none" opacity="0.5"/>
+                <path d="M 10 130 Q 35 125 60 130 T 110 130 T 160 130 T 190 130" 
+                      stroke="#00536A" stroke-width="2" fill="none" opacity="0.3"/>
+            </svg>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 APF France handicap - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Script Accordéon -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const item = this.parentElement;
+                    const isActive = item.classList.contains('active');
+                    
+                    // Fermer tous les autres items
+                    document.querySelectorAll('.accordion-item').forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    // Ouvrir l'item cliqué s'il était fermé
+                    if (!isActive) {
+                        item.classList.add('active');
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+                
+                // Support clavier
+                header.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
